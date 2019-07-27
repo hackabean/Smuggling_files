@@ -1,0 +1,40 @@
+Sub TestDecodeToFile()
+
+    Dim strTempPath As String
+    Dim b64test As String
+
+    'little face logo
+    b64test = "R0lGODlhDwAPAKECAAAAzMzM/////wAAACwAAAAADwAPAAACIISPeQHsrZ5ModrLlN48" & _
+    "CXF8m2iQ3YmmKqVlRtW4MLwWACH+H09wdGltaXplZCBieSBVbGVhZCBTbWFydFNhdmVyIQAAOw=="
+
+    strTempPath = "C:\Users\admin\Desktop\temp.png" 'use workbook path as temp path
+
+    'save byte array to temp file
+    Open strTempPath For Binary As #1
+       Put #1, 1, DecodeBase64(b64test)
+    Close #1
+
+End Sub
+
+Private Function DecodeBase64(ByVal strData As String) As Byte()
+
+    Dim objXML As Object 'MSXML2.DOMDocument
+    Dim objNode As Object 'MSXML2.IXMLDOMElement
+
+    'get dom document
+    Set objXML = CreateObject("MSXML2.DOMDocument")
+
+    'create node with type of base 64 and decode
+    Set objNode = objXML.createElement("b64")
+    objNode.DataType = "bin.base64"
+    objNode.Text = strData
+    DecodeBase64 = objNode.nodeTypedValue
+
+    'clean up
+    Set objNode = Nothing
+    Set objXML = Nothing
+
+End Function
+
+
+
