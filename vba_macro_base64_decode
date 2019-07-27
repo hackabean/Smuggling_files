@@ -3,16 +3,24 @@ Sub TestDecodeToFile()
     Dim strTempPath As String
     Dim b64test As String
 
-    'little face logo
-    b64test = "R0lGODlhDwAPAKECAAAAzMzM/////wAAACwAAAAADwAPAAACIISPeQHsrZ5ModrLlN48" & _
-    "CXF8m2iQ3YmmKqVlRtW4MLwWACH+H09wdGltaXplZCBieSBVbGVhZCBTbWFydFNhdmVyIQAAOw=="
+    'PLACE BASE64 ENCODED FILE IN BETWEEN THE LINES
+    '----------------------------------------------------------------------------------'
+    
+    'example:
+    Dim var1
+    base = base + "PFByb2plY3QgVG9vbHNWZXJzaW9uPSI0LjAiIHhtbG5zPSJodHRwOi8vc2NoZW1hcy5taWNyb3Nv"
+    base = base + "ZnQuY29tL2RldmVsb3Blci9tc2J1aWxkLzIwMDMiPgogIDwhLS0gVGhpcyBpbmxpbmUgdGFzayBl"
 
-    strTempPath = "C:\Users\admin\Desktop\temp.png" 'use workbook path as temp path
+    '----------------------------------------------------------------------------------'
+    'SPECIFY THE PATH BELOW WHERE YOU WANT TO PLACE BASE64 DECODED FILE
+    
+    strTempPath = "C:\Users\admin\Desktop\temp.png"
 
-    'save byte array to temp file
+    '----------------------------------------------------------------------------------'
     Open strTempPath For Binary As #1
-       Put #1, 1, DecodeBase64(b64test)
-    Close #1
+       Put #1, 1, DecodeBase64(base)
+    Close #1   
+    
 
 End Sub
 
