@@ -14,7 +14,7 @@ Sub TestDecodeToFile()
     '----------------------------------------------------------------------------------'
     'SPECIFY THE PATH BELOW WHERE YOU WANT TO PLACE BASE64 DECODED FILE
     
-    strTempPath = "C:\Users\admin\Desktop\temp.txt"
+    strTempPath = "C:\Users\[REDACTED]\Desktop\temp.txt"
 
     '----------------------------------------------------------------------------------'
     Open strTempPath For Binary As #1
