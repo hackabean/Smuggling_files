@@ -1,7 +1,7 @@
 Sub TestDecodeToFile()
 
     Dim strTempPath As String
-    Dim b64test As String
+    Dim base As String
 
     'PLACE BASE64 ENCODED FILE IN BETWEEN THE LINES
     '----------------------------------------------------------------------------------'
@@ -14,7 +14,7 @@ Sub TestDecodeToFile()
     '----------------------------------------------------------------------------------'
     'SPECIFY THE PATH BELOW WHERE YOU WANT TO PLACE BASE64 DECODED FILE
     
-    strTempPath = "C:\Users\admin\Desktop\temp.png"
+    strTempPath = "C:\Users\admin\Desktop\temp.txt"
 
     '----------------------------------------------------------------------------------'
     Open strTempPath For Binary As #1
