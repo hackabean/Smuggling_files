@@ -12,8 +12,8 @@ adTypeBinary          = 1 // Binary file is encoded
 
 function decode(from, to) {
 	
-  from = "PathToWriteBase64"
-	to = "PathToDecodedBinary"
+   from = "PathToWriteBase64"
+   to = "PathToDecodedBinary"
 	
     var fileSystemObj = WScript.CreateObject("Scripting.FileSystemObject");
     var file = fileSystemObj.GetFile(from)
